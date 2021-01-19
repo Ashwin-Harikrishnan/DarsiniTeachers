@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
+import ObjectRepository.AddAnnouncementPage;
 import ObjectRepository.AddAssignmentPage;
 import ObjectRepository.ClassroomPage;
 import ObjectRepository.LoginPage;
@@ -16,9 +17,9 @@ import ObjectRepository.LogoutPage;
 import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
-public class AddAssignmentTest extends BaseClass {
+public class AddAnnouncementTest extends BaseClass {
 	ClassroomPage classroomObj;
-	AddAssignmentPage assignmentObj;
+	AddAnnouncementPage announcementObj;
 	LoginPage loginObj;
 	static TestDataImport TestDataObj;
 	static ExcelDataImport excelDataObj;
@@ -32,25 +33,25 @@ public class AddAssignmentTest extends BaseClass {
 
 		loginObj = new LoginPage(androidDriver);
 		classroomObj = new ClassroomPage(androidDriver);
-		assignmentObj = new AddAssignmentPage(androidDriver);
+		announcementObj = new AddAnnouncementPage(androidDriver);
 		logoutObj = new LogoutPage(androidDriver);
-		TestDataObj = new TestDataImport();
-		excelDataObj = new ExcelDataImport();
-		excelDataObj.readExcel("AssignmentPage");
-		
+		/*
+		 * TestDataObj = new TestDataImport(); excelDataObj = new ExcelDataImport();
+		 * excelDataObj.readExcel("AssignmentPage");
+		 */
 
 	}
 
 	@Test
-	public void addAssignmentTest() {
+	public void addAnnouncementTest() {
 		try {
-			testData = TestDataObj.getAddAssignmentData();
 			loginObj.validLogin();
 			classroomObj.assignmentNavigationMethod("Central Integration Planner");
-			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3]);
+			announcementObj.addAnnouncement();
 			sleep(1000);
-			actualstring = customXpathMethod(testData[0]).getText();
-			expectedstring = testData[0];
+			actualstring = customXpathMethod("Announcement 1").getText();
+			expectedstring = "Announcement 1";
+			
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -59,7 +60,6 @@ public class AddAssignmentTest extends BaseClass {
 		assertEquals(actualstring, expectedstring);
 
 	}
-
 	@AfterClass
 	public void endTest() {
 		sleep(1000);

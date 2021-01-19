@@ -8,7 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelDataImport {
-	String excelPath = "E:\\Random Crap\\Studies\\STC\\Documents\\excel docs\\DarsiniTeachers.xlsx";
+	String excelPath = "E:\\Users\\Ashwin Harikrishnan\\eclipse-workspace\\com.darsiniteacher\\Excel\\DarsiniTeachers.xlsx";
 	static XSSFWorkbook wb;
 	static XSSFSheet sh;
 	static Cell cell;

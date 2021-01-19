@@ -11,7 +11,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class AddAssignmentPage extends BaseClass{
 	AndroidDriver<MobileElement> androidDriver;
-	//ClassroomPage ClassromObj = new ClassroomPage(androidDriver);
+	
 	
 	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter assignment name']")
 	public AndroidElement assignmentName;
@@ -25,7 +25,7 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentConfirm;
 	@AndroidFindBy(id = "com.darisni.teacher:id/btn_positive")
 	public AndroidElement assignmentPopupConfirm;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Create Announcement or Assignment']")
+	@AndroidFindBy(id = "com.darisni.teacher:id/add_button")
 	public AndroidElement createAssignmentStartBtn;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Create an assignment']")
 	public AndroidElement createAssignmentBtn;
@@ -33,16 +33,16 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentNameVerification;
 	
 	
-	public void addAssignment() {
+	public void addAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date) {
 		clickWait(createAssignmentStartBtn);
 		createAssignmentStartBtn.click();
 		clickWait(createAssignmentBtn);
 		createAssignmentBtn.click();
 		clickWait(assignmentName);
-		assignmentName.sendKeys("Assignment 1");
-		assignmentDescription.sendKeys("1st assignment in the series");
-		assignmentFileUpload.sendKeys("E:\\Random Crap\\Studies\\Resume.pdf");
-		assignmentDatepicker.sendKeys("03/02/2021");
+		assignmentName.sendKeys(assignmentTitle);
+		assignmentDescription.sendKeys(assignmentDesc);
+		assignmentFileUpload.sendKeys(assignmentFile);
+		assignmentDatepicker.sendKeys(Date);
 		assignmentConfirm.click();
 		assignmentPopupConfirm.click();
 		

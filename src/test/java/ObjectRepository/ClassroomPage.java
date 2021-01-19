@@ -16,10 +16,12 @@ public class ClassroomPage extends BaseClass {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Class']")
 	public AndroidElement classBtn;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Create Announcement or Assignment']")
-	public AndroidElement createAssignmentStartBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/add_button")
+	public AndroidElement createAssignmentAnnouncementStartBtn;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Create an assignment']")
 	public AndroidElement createAssignmentBtn;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Make an announcement']")
+	public AndroidElement createAnnouncementBtn;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Make an announcement or send out an assignment to your students']")
 	public AndroidElement classroomVerificationText;
 	@AndroidFindBy(id = "com.darisni.teacher:id/img_back_navigation")
