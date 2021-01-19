@@ -41,7 +41,7 @@ public class AddAnnouncementPage extends BaseClass{
 		clickWait(createAnnouncement);
 		createAnnouncement.click();
 		clickWait(announcementTitle);
-		announcementTitle.sendKeys("Announcement 1");
+		announcementTitle.sendKeys("AnnouncementOne");
 		announcementDescription.sendKeys("Announcement Desc one");
 		announcementAttachments.sendKeys("E:\\Users\\Ashwin Harikrishnan\\eclipse-workspace\\com.darsiniteacher\\Resources\\Images\\text2.png");
 		/*if(COMMENTSLIDEREXCELBOOL)

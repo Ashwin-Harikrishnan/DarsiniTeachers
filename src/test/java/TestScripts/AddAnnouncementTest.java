@@ -49,8 +49,8 @@ public class AddAnnouncementTest extends BaseClass {
 			classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			announcementObj.addAnnouncement();
 			sleep(1000);
-			actualstring = customXpathMethod("Announcement 1").getText();
-			expectedstring = "Announcement 1";
+			actualstring = customXpathMethod("AnnouncementOne").getText();
+			expectedstring = "AnnouncementOne";
 			
 
 		} catch (Exception e) {
